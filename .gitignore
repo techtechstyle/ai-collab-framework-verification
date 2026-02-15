@@ -3,4 +3,5 @@ dist/
 *.js
 *.d.ts
 *.js.map
+*:Zone.Identifier
 !vitest.config.ts
