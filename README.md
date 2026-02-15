@@ -7,7 +7,7 @@
 フレームワークのBPMN形式定義（Phase 1）で定義された69個の不変条件に対して、XStateステートマシンによるテスト実装で検証しています。
 
 - **不変条件カバレッジ**: 62/69（89.9%）、実装対象は100%
-- **テスト総数**: 161テスト + 1 skip
+- **テスト総数**: 175テスト + 1 skip（マシンテスト161 + 学習テスト14）
 - **テストフレームワーク**: Vitest
 
 ## ディレクトリ構成
@@ -31,14 +31,14 @@ ai-collab-framework-verification/
 │   │       ├── recovery-flow.test.ts       # T13: 29テスト
 │   │       ├── main-flow.test.ts           # T10c: 14テスト
 │   │       ├── main-flow-t10d.test.ts      # T10d: 5テスト
-│   │       ├── integrated-flow.test.ts     # T14: 7テスト+1skip
+│   │       ├── integrated-flow.test.ts     # T14: 8テスト(1skip)
 │   │       └── invariants-integration.test.ts  # T15: 8テスト
 │   └── learning/
 │       ├── delay-example.ts        # XState遅延遷移の実装
 │       ├── history-example.ts      # XState履歴状態の実装
 │       └── __tests__/
-│           ├── delay-example.test.ts   # XState遅延遷移の学習
-│           └── history-example.test.ts # XState履歴状態の学習
+│           ├── delay-example.test.ts   # XState遅延遷移の学習（7テスト）
+│           └── history-example.test.ts # XState履歴状態の学習（7テスト）
 ├── package.json
 ├── tsconfig.json
 └── vitest.config.ts
@@ -85,7 +85,7 @@ npm test -- integrated-flow
 | `docs/xstate-concepts-mapping.md` | XState概念マッピング |
 | `docs/bpmn-to-statechart-mapping.md` | BPMN→ステートチャート変換ルール |
 | `docs/spec-l0l4-hierarchy.md` | L0-L4階層仕様 |
-| `docs/spec-main-flow.md` | メインフロー+SP-2仕様 |
+| `docs/spec-mainflow-sp2.md` | メインフロー+SP-2仕様 |
 | `docs/spec-verification-losscut.md` | 検証ループ+損切り仕様 |
 | `docs/spec-recovery-escalation.md` | 復帰フロー+ES仕様 |
 | `docs/invariant-coverage-report.md` | 不変条件カバレッジレポート（T16） |
